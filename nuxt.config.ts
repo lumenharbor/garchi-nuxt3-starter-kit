@@ -1,3 +1,5 @@
+import tailwindcss from "@tailwindcss/vite";
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: false },
@@ -6,11 +8,11 @@ export default defineNuxtConfig({
     GARCHI_API_KEY: "your_api_key",
   },
   css: ['~/assets/css/main.css'],
-  postcss: {
-    plugins: {
-      tailwindcss: {},
-      autoprefixer: {},
-    },
+
+  vite: {
+    plugins: [
+      tailwindcss(),
+    ],
   },
   components: {
     dirs: [
@@ -25,6 +27,7 @@ export default defineNuxtConfig({
     componentIslands: true
   },
   future: {
-    compatibilityVersion: 4,
+    compatibilityVersion: 5,
   },
+
 })
